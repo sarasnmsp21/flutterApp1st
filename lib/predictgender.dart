@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 void main() {
-  runApp(MyApp());
+  runApp(PredictGender());
 }
 
-class MyApp extends StatelessWidget {
+class PredictGender extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -58,12 +58,21 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Text('Predict'),
         ),
         FlatButton(
-          onPressed: (){},
+          onPressed: (){
+          },
           child: Text('Test Button'),
         ),
+        //  FlatButton(
+        //   onPressed: (){
+        //      Navigator.pushNamed(context, '/userdetail');
+        //   },
+        //   child: Text('Back'),
+        // ),
+      
         if(result != null) Text(result)
       ],
-      ),
+      )
+     
     ),
     );
   }

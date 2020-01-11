@@ -38,15 +38,21 @@ class HomePage extends StatelessWidget {
               ),
             ),
             ListTile(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, '/predictgender');
+              },
               title: Text('Feature'),
             ),
             ListTile(
-              onTap: () {},
+              onTap: () {
+                 Navigator.pushNamed(context, '/userdetail');
+              },
               title: Text('Setting'),
             ),
             ListTile(
-              onTap: () {},
+              onTap: () {
+                 Navigator.pushNamed(context, '/userdetail');
+              },
               title: Text('Logout'),
             )
           ],
