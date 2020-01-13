@@ -38,26 +38,88 @@ class HomePage extends StatelessWidget {
               ),
             ),
             ListTile(
+              
               onTap: () {
+                
                 Navigator.pushNamed(context, '/predictgender');
               },
-              title: Text('Feature'),
+              title: Text('MYSHOP'),
+              
+              
             ),
             ListTile(
               onTap: () {
                  Navigator.pushNamed(context, '/userdetail');
               },
-              title: Text('Setting'),
+              title: Text('PRIVATE LIST'),
             ),
             ListTile(
               onTap: () {
                  Navigator.pushNamed(context, '/userdetail');
               },
-              title: Text('Logout'),
+              title: Text('CATEGORIES'),
+            ),
+              ListTile(
+              onTap: () {
+                 Navigator.pushNamed(context, '/userdetail');
+              },
+              title: Text('NOTIFICATIONS'),
+            ),
+              ListTile(
+              onTap: () {
+                 Navigator.pushNamed(context, '/userdetail');
+              },
+              title: Text('RECENTLY ADDED'),
+            ),
+              ListTile(
+              onTap: () {
+                 Navigator.pushNamed(context, '/userdetail');
+              },
+              title: Text('FOLLOWERS'),
+            ),
+              ListTile(
+              onTap: () {
+                 Navigator.pushNamed(context, '/userdetail');
+              },
+              title: Text('BLOCK LIST'),
+            ),
+              ListTile(
+              onTap: () {
+                 Navigator.pushNamed(context, '/userdetail');
+              },
+              title: Text('PAYTM'),
+            ),
+              ListTile(
+              onTap: () {
+                 Navigator.pushNamed(context, '/userdetail');
+              },
+              title: Text('FEEDBACK'),
+            ),
+              ListTile(
+              onTap: () {
+                 Navigator.pushNamed(context, '/userdetail');
+              },
+              title: Text('INVITE'),
+            ),
+              ListTile(
+              onTap: () {
+                 Navigator.pushNamed(context, '/userdetail');
+              },
+              title: Text('SUBSCRIPTION'),
+            ),
+              ListTile(
+              onTap: () {
+                 Navigator.pushNamed(context, '/userdetail');
+              },
+              title: Text('LOGOUT'),
             )
+            
           ],
+          
         ),
+        
       ),
+     
     );
   }
 }

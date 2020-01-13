@@ -30,14 +30,13 @@ class _HomeScreenState extends State<HomeScreen> {
     var body = jsonDecode(res.body);
     result = "Gender: ${body['gender']}, Probability: ${body['probability']}";
     setState(() {
-      
     });
-
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+         centerTitle: true,
         title: Text("Gender Predictor"),
       ),
       body: Padding(
@@ -62,13 +61,6 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           child: Text('Test Button'),
         ),
-        //  FlatButton(
-        //   onPressed: (){
-        //      Navigator.pushNamed(context, '/userdetail');
-        //   },
-        //   child: Text('Back'),
-        // ),
-      
         if(result != null) Text(result)
       ],
       )
