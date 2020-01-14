@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter2ndproject/predictgender.dart';
 import 'package:flutter2ndproject/userdetails.dart';
+import 'package:flutter2ndproject/test.dart';
+import 'package:flutter2ndproject/login.dart';
 import 'drawer.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -12,8 +14,10 @@ void main(){
     routes: {
       '/':(context) => MyApp(),
       '/Homepage':(context) => HomePage(),
-      '/predictgender':(context) => PredictGender(),
+      '/predictgender':(context) => HomeScreen(),
       '/userdetail':(context) => UserDetail(),
+      '/testpage':(context) => TestPage(),
+      '/login':(context) => Login()
     },
     ),
   );
@@ -28,7 +32,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return new SplashScreen(
       seconds: 5,
-      navigateAfterSeconds: new HomePage(),
+      navigateAfterSeconds: new Login(),
       title: new Text('Welcome To SplashScreen',
       style: new TextStyle(
         fontWeight: FontWeight.bold,

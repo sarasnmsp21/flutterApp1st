@@ -2,7 +2,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 void main() {
-  runApp(PredictGender());
+  runApp(MaterialApp(
+    home: HomeScreen(),
+  ));
 }
 
 class PredictGender extends StatelessWidget {

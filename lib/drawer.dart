@@ -13,14 +13,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('My App'),
       ),
-      body: Center(
-        child: Text(
-          'Hello',
-          style: TextStyle(
-            fontSize: 25,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+
+      body: Padding(
+        padding: EdgeInsets.all(10.0),
+           
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -38,18 +34,15 @@ class HomePage extends StatelessWidget {
               ),
             ),
             ListTile(
-              
               onTap: () {
-                
-                Navigator.pushNamed(context, '/predictgender');
+                Navigator.pushNamed(context, '/testpage');
               },
               title: Text('MYSHOP'),
-              
               
             ),
             ListTile(
               onTap: () {
-                 Navigator.pushNamed(context, '/userdetail');
+                 Navigator.pushNamed(context, '/predictgender');
               },
               title: Text('PRIVATE LIST'),
             ),
@@ -109,7 +102,7 @@ class HomePage extends StatelessWidget {
             ),
               ListTile(
               onTap: () {
-                 Navigator.pushNamed(context, '/userdetail');
+                 Navigator.pushNamed(context, '/login');
               },
               title: Text('LOGOUT'),
             )
@@ -119,7 +112,6 @@ class HomePage extends StatelessWidget {
         ),
         
       ),
-     
     );
   }
 }
