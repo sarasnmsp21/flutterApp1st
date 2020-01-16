@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter2ndproject/predictgender.dart';
+import 'package:flutter2ndproject/predictgenderdemo.dart';
 import 'package:flutter2ndproject/userdetails.dart';
-import 'package:flutter2ndproject/test.dart';
+import 'package:flutter2ndproject/searchdemo.dart';
 import 'package:flutter2ndproject/login.dart';
-import 'drawer.dart';
+import 'home.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 void main(){

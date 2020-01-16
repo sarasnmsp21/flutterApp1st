@@ -43,61 +43,61 @@ class _TestPageState extends State<TestPage>
   }
 
   @override
-  // void initState() {
-  //   super.initState();
-  //   _IsSearching = false;
-  //   init();
+  void initState() {
+    super.initState();
+    _IsSearching = false;
+    init();
 
-  // }
+  }
 
-  // void init() {
-  //   _list = List();
-  //   _list.add("Google");
-  //   _list.add("IOS");
-  //   _list.add("Andorid");
-  //   _list.add("Dart");
-  //   _list.add("Flutter");
-  //   _list.add("Python");
-  //   _list.add("React");
-  //   _list.add("Xamarin");
-  //   _list.add("Kotlin");
-  //   _list.add("Java");
-  //   _list.add("RxAndroid");
-  // }
+  void init() {
+    _list = List();
+    _list.add("Google");
+    _list.add("IOS");
+    _list.add("Andorid");
+    _list.add("Dart");
+    _list.add("Flutter");
+    _list.add("Python");
+    _list.add("React");
+    _list.add("Xamarin");
+    _list.add("Kotlin");
+    _list.add("Java");
+    _list.add("RxAndroid");
+  }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       key: key,
       appBar: buildBar(context),
-      // body: new ListView(
-      //   padding: new EdgeInsets.symmetric(vertical: 8.0),
-      //   children: _IsSearching ? _buildTestPage() : _buildList(),
-      // ),
+      body: new ListView(
+        padding: new EdgeInsets.symmetric(vertical: 8.0),
+        children: _IsSearching ? _buildTestPage() : _buildList(),
+      ),
     );
   }
 
-  // List<ChildItem> _buildList() {
-  //   return _list.map((contact) => new ChildItem(contact)).toList();
-  // }
+  List<ChildItem> _buildList() {
+    return _list.map((contact) => new ChildItem(contact)).toList();
+  }
 
-  // List<ChildItem> _buildTestPage() {
-  //   if (_searchText.isEmpty) {
-  //     return _list.map((contact) => new ChildItem(contact))
-  //         .toList();
-  //   }
-  //   else {
-  //     List<String> _TestPage = List();
-  //     for (int i = 0; i < _list.length; i++) {
-  //       String  name = _list.elementAt(i);
-  //       if (name.toLowerCase().contains(_searchText.toLowerCase())) {
-  //         _TestPage.add(name);
-  //       }
-  //     }
-  //     return _TestPage.map((contact) => new ChildItem(contact))
-  //         .toList();
-  //   }
-  // }
+  List<ChildItem> _buildTestPage() {
+    if (_searchText.isEmpty) {
+      return _list.map((contact) => new ChildItem(contact))
+          .toList();
+    }
+    else {
+      List<String> _TestPage = List();
+      for (int i = 0; i < _list.length; i++) {
+        String  name = _list.elementAt(i);
+        if (name.toLowerCase().contains(_searchText.toLowerCase())) {
+          _TestPage.add(name);
+        }
+      }
+      return _TestPage.map((contact) => new ChildItem(contact))
+          .toList();
+    }
+  }
 
   Widget buildBar(BuildContext context) {
     return new AppBar(
@@ -149,12 +149,12 @@ class _TestPageState extends State<TestPage>
 
 }
 
-// class ChildItem extends StatelessWidget {
-//   final String name;
-//   ChildItem(this.name);
-//   @override
-//   Widget build(BuildContext context) {
-//     return new ListTile(title: new Text(this.name));
-//   }
+class ChildItem extends StatelessWidget {
+  final String name;
+  ChildItem(this.name);
+  @override
+  Widget build(BuildContext context) {
+    return new ListTile(title: new Text(this.name));
+  }
 
-// }
+}
