@@ -49,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Text('Enter a name to predic its gender.'),
         Padding(padding: const EdgeInsets.all(18.0),
         child: TextField(
+          autofocus: true,
           controller: _nameController,
           decoration: InputDecoration(
             hintText: 'Name'

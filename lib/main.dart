@@ -3,6 +3,7 @@ import 'package:flutter2ndproject/predictgenderdemo.dart';
 import 'package:flutter2ndproject/userdetails.dart';
 import 'package:flutter2ndproject/searchdemo.dart';
 import 'package:flutter2ndproject/login.dart';
+import 'package:flutter2ndproject/product-detail.dart';
 import 'home.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -17,7 +18,8 @@ void main(){
       '/predictgender':(context) => HomeScreen(),
       '/userdetail':(context) => UserDetail(),
       '/testpage':(context) => TestPage(),
-      '/login':(context) => Login()
+      '/login':(context) => Login(),
+       '/productdetail':(context) => ProductDetail(),
     },
     ),
   );

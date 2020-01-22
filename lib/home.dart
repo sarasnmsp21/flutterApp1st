@@ -7,13 +7,37 @@ void main() {
 }
 
 
-
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
 class _HomePageState extends State<HomePage> {
+    var categories = [
+    {
+      'title': 'Women',
+      'img': 'assets/dress.jpg',
+    },
+    {
+      'title': 'Men',
+      'img': 'assets/men.jpg',
+    },
+    {
+      'title': 'Kids',
+      'img': 'assets/children.jpg',
+    },
+    {
+      'title': 'House',
+      'img': 'assets/home.png',
+    },
+    {
+      'title': 'Cars',
+      'img': 'assets/cars.jpg',
+    },
+    {
+      'title': 'Electronics',
+      'img': 'assets/electronics.jpg',
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,34 +50,68 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget buildBody() {
-    return GridView.count(
-      crossAxisCount: 2,
-      children: new List<Widget>.generate(8, (index){
-        return new GridTile(
-          child: new Card(
-            color: Colors.blue.shade200,
-            child: new Center(
-              child: new Text('Hello'),
+    return GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, childAspectRatio: 0.8),
+        itemCount: 6,
+        itemBuilder: (context, i) {
+          return InkWell(
+            child: Container(
+              margin: EdgeInsets.all(5),
+              child: Card(
+                
+                elevation: 2,
+                child: Container(
+                  child: Container(
+                    color: Color.fromRGBO(0, 0, 0, 0.4),
+                    child: buildTitle(categories[i]['title']),
+                  ),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(categories[i]['img']),
+                        fit: BoxFit.fill),
+                  ),
+                ),
+              ),
             ),
-          ),
-        );
-
-      })
-      
-
-    );
-    
+            onTap: () => {
+                 Navigator.pushNamed(context, '/productdetail')
+                },
+          );
+        });
   }
+    Widget buildTitle(String title) {
+    return Center(
+      child: Container(
+        child: Text(
+          title,
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+        padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+        decoration: BoxDecoration(
+            border: Border.all(
+                width: 2, color: Colors.white, style: BorderStyle.solid)),
+      ),
+    );
+  }
+  
 
 Widget buildDrawer() {
+  
    return Drawer(
+     
         child: ListView(
+          
           padding: EdgeInsets.all(0),
           children: <Widget>[
+            
             UserAccountsDrawerHeader(
+             
               accountEmail: Text('sarasnmsp21@gmail.com'),
               accountName: Text('Saraswati Gauda'),
               currentAccountPicture: CircleAvatar(
+                
                 child: Text('S'),
               ),
               

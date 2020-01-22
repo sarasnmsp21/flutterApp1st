@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
-
-void main() => runApp(MaterialApp(
-  home: Login(),
-));
 
 class Login extends StatefulWidget {
   @override
@@ -11,28 +6,42 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  bool validateField = false;
-  bool isError = true;
 
+  final _formKey = GlobalKey<FormState>();
   String emailValidatorFunc(String email){
-    if(email.isEmpty || email == null){
+     if(email.isEmpty || email == null){
       return 'Email is Required';
     }
+    // else {
+    //   return "";
+    // }
   }
-   String passwordValidatorFunc(String password){
-    if(password.isEmpty || password == null){
+
+    String passwordValidatorFunc(String password){
+     if(password.isEmpty || password == null){
       return 'Password is Required';
     }
+    else if(password.length < 4){
+      return 'Password is too short';
+
+    }
+    // else {
+    //   return "";
+    // }
   }
 
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-      child: Center(
+
+      body: Center(
+  child: Center(
         child: Container(
-          color: Colors.white,
+        child: Container(
+          child: Form(
+            key: _formKey,
+            autovalidate: true,
           child: Padding(
             padding: const EdgeInsets.all(36.0),
             child: Column(
@@ -40,13 +49,14 @@ class _LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[ 
                   SizedBox(
-                      height: 155.0,
+                      height: 120.0,
+                      width: 200.0,
                       child: Image.asset(
                         "assets/image3.png",
                         fit: BoxFit.contain,
                       ),
                     ),
-                SizedBox(height: 45.0,
+                SizedBox(height: 30.0,
                 ),
              
                   TextFormField(
@@ -56,7 +66,6 @@ class _LoginState extends State<Login> {
                     hintText: "Email",
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
                   ),
-                  autovalidate: validateField,
                   initialValue: '',
                 ),
                 SizedBox(
@@ -64,13 +73,12 @@ class _LoginState extends State<Login> {
                 ),
                  TextFormField(
                    obscureText: true,
-                   validator: passwordValidatorFunc,
+                     validator: passwordValidatorFunc,
                     decoration: InputDecoration(
                     contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                     hintText: "Password",
                     border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
                   ),
-                   autovalidate: validateField,
                   initialValue: '',
                 ),
                 
@@ -87,17 +95,19 @@ class _LoginState extends State<Login> {
                     color: Colors.white, fontWeight: FontWeight.bold), 
                     ), 
                   ), onPressed: () {
-                    setState(() { validateField = true; });
-                    if(!isError)
+                    if(_formKey.currentState.validate()){
                       Navigator.pushNamed(context, '/Homepage');
+                    }
                   },
                   color: Colors.green,
                 ) 
               ],
             ),
           ),
+          ),
         ),
       ),
+  ),
         )
     );
   }

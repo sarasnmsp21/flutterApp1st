@@ -7,7 +7,6 @@ void main() {
 );
 }
 
-
 class TestPage extends StatefulWidget {
   TestPage({ Key key }) : super(key: key);
   @override
@@ -109,6 +108,7 @@ class _TestPageState extends State<TestPage>
               if (this.actionIcon.icon == Icons.search) {
                 this.actionIcon = new Icon(Icons.close, color: Colors.white,);
                 this.appBarTitle = new TextField(
+                  autofocus: true,
                   controller: _searchQuery,
                   style: new TextStyle(
                     color: Colors.white,
