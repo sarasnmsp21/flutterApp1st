@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -45,7 +47,20 @@ class _HomePageState extends State<HomePage> {
         title: Text('Home'),
       ),
       drawer: buildDrawer(),
+      // body:Container(
+      //   child: Column(
+      //     children: <Widget>[
+              
+      //     ],
+      //   ),
+       
+       
+   
+        
+       
+      // ),
       body: buildBody(),
+      
 );
   }
 
@@ -78,8 +93,58 @@ class _HomePageState extends State<HomePage> {
                  Navigator.pushNamed(context, '/productdetail')
                 },
           );
+
         });
+        
   }
+
+   Widget buildSwiper() {
+    List<String> imgs = [
+      'assets/cars.jpg',
+      'assets/cars.jpg',
+      'assets/cars.jpg',
+      'assets/cars.jpg',
+      'assets/cars.jpg',
+      'assets/cars.jpg',
+    ];
+
+    return Swiper(
+      
+      // outer: false,
+      itemBuilder: (context, i) {
+        return Image.asset(imgs[i]);
+      },
+      autoplay: true,
+      duration: 300,
+      pagination:  SwiperPagination(margin:  EdgeInsets.all(5.0)),
+      itemCount: imgs.length,
+    );
+  }
+
+  // Widget buildImgCarousel() {
+  //   return Container(
+  //     child:  CarouselSlider(
+  //       boxFit: BoxFit.cover,
+  //       images: [
+  //         AssetImage('img/c1.jpg'),
+  //         AssetImage('img/m1.jpeg'),
+  //         AssetImage('img/m2.jpg'),
+  //         AssetImage('img/w1.jpeg'),
+  //         AssetImage('img/w3.jpeg'),
+  //         AssetImage('img/w4.jpeg'),
+  //       ],
+  //       autoplay: true,
+  //       animationCurve: Curves.fastOutSlowIn,
+  //       animationDuration: Duration(milliseconds: 1000),
+  //       dotSize: 5.0,
+  //       indicatorBgPadding: 2.0,
+  //       // dotColor: Colors.blue,
+  //     ),
+  //   );
+  // }
+
+
+
     Widget buildTitle(String title) {
     return Center(
       child: Container(
@@ -95,6 +160,8 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  
   
 
 Widget buildDrawer() {
@@ -111,7 +178,6 @@ Widget buildDrawer() {
               accountEmail: Text('sarasnmsp21@gmail.com'),
               accountName: Text('Saraswati Gauda'),
               currentAccountPicture: CircleAvatar(
-                
                 child: Text('S'),
               ),
               
@@ -148,6 +214,8 @@ Widget buildDrawer() {
     
    );
 }
+
+
 
   
 }

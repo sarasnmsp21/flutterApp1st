@@ -4,6 +4,7 @@ import 'package:flutter2ndproject/userdetails.dart';
 import 'package:flutter2ndproject/searchdemo.dart';
 import 'package:flutter2ndproject/login.dart';
 import 'package:flutter2ndproject/product-detail.dart';
+import 'package:flutter2ndproject/signUp.dart';
 import 'home.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -20,6 +21,7 @@ void main(){
       '/testpage':(context) => TestPage(),
       '/login':(context) => Login(),
        '/productdetail':(context) => ProductDetail(),
+       '/signUp':(context) => SignUp(),
     },
     ),
   );
